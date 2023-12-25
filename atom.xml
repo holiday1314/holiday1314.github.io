@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>holiday1314&#39;s blog</title>
+  
+  
+  <link href="https://holiday1314.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://holiday1314.github.io/"/>
+  <updated>2023-12-24T13:36:13.409Z</updated>
+  <id>https://holiday1314.github.io/</id>
+  
+  <author>
+    <name>Wang Yan</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Welcome to holiday1314&#39;s blog!</title>
+    <link href="https://holiday1314.github.io/Welcome%20to%20holiday1314&#39;s%20blog!"/>
+    <id>https://holiday1314.github.io/Welcome%20to%20holiday1314&#39;s%20blog!</id>
+    <published>2023-12-24T12:44:02.840Z</published>
+    <updated>2023-12-24T13:36:13.409Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Welcome-to-holiday1314’s-blog"><a href="#Welcome-to-holiday1314’s-blog" class="headerlink" title="Welcome to holiday1314’s blog!"></a>Welcome to holiday1314’s blog!</h1><ol><li>请先阅读<a href="https://holiday1314.github.io/rules/">rules</a></li><li>想找holiday1314请到洛谷或csdn</li><li></li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Welcome-to-holiday1314’s-blog&quot;&gt;&lt;a href=&quot;#Welcome-to-holiday1314’s-blog&quot; class=&quot;headerlink&quot; title=&quot;Welcome to holiday1314’s blog!&quot;&gt;&lt;/</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
