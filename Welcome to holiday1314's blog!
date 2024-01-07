@@ -116,8 +116,6 @@
                 
                 <a href="/about">About</a>
                 
-                <a href="/rules">Rules</a>
-                
             </div>
             <div class="header-menu-social">
                 
@@ -145,8 +143,6 @@
                     <a href="/archives">Archives</a>
                     
                     <a href="/about">About</a>
-                    
-                    <a href="/rules">Rules</a>
                     
                 </div>
             </div>
@@ -199,9 +195,11 @@
 
         <div class="article-entry post-inner-html hairline" itemprop="articleBody">
             <h1 id="Welcome-to-holiday1314’s-blog"><a href="#Welcome-to-holiday1314’s-blog" class="headerlink" title="Welcome to holiday1314’s blog!"></a>Welcome to holiday1314’s blog!</h1><ol>
-<li>请先阅读<a href="https://holiday1314.github.io/rules/">rules</a></li>
-<li>想找holiday1314请到洛谷或csdn</li>
-<li></li>
+<li><p>请先阅读<a href="https://holiday1314.github.io/about/">About</a></p>
+</li>
+<li><p>想找holiday1314请到洛谷或csdn</p>
+<p>祝您在本站阅读愉快</p>
+</li>
 </ol>
 
         </div>
@@ -320,7 +318,7 @@
     <!-- 开源不易，请勿删除 -->
     <div class="footer-wrap">
         <div class="footer-inner"> 
-            holiday1314&#39;s blog &copy; 2023<br>
+            holiday1314&#39;s blog &copy; 2024<br>
             Powered By Hexo · Theme By <a href="https://linhong.me/" target="_blank">Aomori</a> · <a href="https://github.com/lh1me/hexo-theme-aomori" target="_blank">Github</a>
         </div>
     </div>
