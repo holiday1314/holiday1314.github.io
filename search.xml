@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Welcome to holiday1314&#39;s blog!</title>
+    <url>/Hello/Welcome%20to%20holiday1314&#39;s%20blog!/</url>
+    <content><![CDATA[<h1 id="Welcome-to-holiday1314’s-blog"><a href="#Welcome-to-holiday1314’s-blog" class="headerlink" title="Welcome to holiday1314’s blog!"></a>Welcome to holiday1314’s blog!</h1><ol>
+<li><p>请先阅读<a href="https://holiday1314.github.io/about/">About</a></p>
+</li>
+<li><p>想找holiday1314请到洛谷或csdn</p>
+<p>祝您在本站阅读愉快</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hello</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>luogu P1001 A+B problem</title>
+    <url>/luogu/P1001/</url>
+    <content><![CDATA[<p>简单的A+B程序，妹啥可讲的</p>
+<p>c++:</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a,b;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    cout&lt;&lt;a + b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>python:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">b = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">output(a + b)</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>luogu</category>
+      </categories>
+  </entry>
+</search>
