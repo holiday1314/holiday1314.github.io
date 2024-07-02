@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://holiday1314.github.io/luogu/P10678/</loc>
+    
+    <lastmod>2024-07-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://holiday1314.github.io/luogu/P4330/</loc>
+    
+    <lastmod>2024-07-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://holiday1314.github.io/Hello/Welcome%20to%20holiday1314's%20blog!/</loc>
     
     <lastmod>2024-07-02</lastmod>
@@ -21,15 +39,6 @@
   
   <url>
     <loc>https://holiday1314.github.io/luogu/P5603/</loc>
-    
-    <lastmod>2024-07-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://holiday1314.github.io/luogu/P4330/</loc>
     
     <lastmod>2024-07-02</lastmod>
     
@@ -107,6 +116,20 @@
   
   <url>
     <loc>https://holiday1314.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2024-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://holiday1314.github.io/tags/%E6%9E%84%E9%80%A0/</loc>
+    <lastmod>2024-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://holiday1314.github.io/tags/%E6%A0%91/</loc>
     <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

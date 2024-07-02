@@ -15,7 +15,77 @@
       </categories>
   </entry>
   <entry>
-    <title>luogu P4330 Debug</title>
+    <title>luogu P10678 『STA - R6』月</title>
+    <url>/luogu/P10678/</url>
+    <content><![CDATA[<h1 id="P10678-『STA-R6』月"><a href="#P10678-『STA-R6』月" class="headerlink" title="P10678 『STA - R6』月"></a>P10678 『STA - R6』月</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>对于一棵有 $n$ 个节点的树 $T$，定义其直径 $\operatorname{diam}(T)$ 为任意两个节点之间距离的最大值。</p>
+<p>给定正整数 $n$ 和每个点 $i$ 的度数 $d_i$，你需要构造一棵树 $T^\prime$，同时最小化 $\operatorname{diam}(T^\prime)$。</p>
+<p>保证至少存在一棵符合要求的树，若存在多个符合要求的答案，输出任意一个即可。</p>
+<h2 id="样例-1"><a href="#样例-1" class="headerlink" title="样例 #1"></a>样例 #1</h2><h3 id="样例输入-1"><a href="#样例输入-1" class="headerlink" title="样例输入 #1"></a>样例输入 #1</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">4</span><br><span class="line">2</span><br><span class="line">1 1</span><br><span class="line">3</span><br><span class="line">1 1 2</span><br><span class="line">5</span><br><span class="line">1 1 2 2 2</span><br><span class="line">7</span><br><span class="line">1 3 2 3 1 1 1</span><br></pre></td></tr></table></figure>
+<h3 id="样例输出-1"><a href="#样例输出-1" class="headerlink" title="样例输出 #1"></a>样例输出 #1</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">2 1</span><br><span class="line">1 3</span><br><span class="line">3 2</span><br><span class="line">5 4</span><br><span class="line">4 2</span><br><span class="line">3 1</span><br><span class="line">3 5</span><br><span class="line">4 2</span><br><span class="line">3 2</span><br><span class="line">1 2</span><br><span class="line">5 4</span><br><span class="line">6 4</span><br><span class="line">7 3</span><br></pre></td></tr></table></figure>
+<h2 id="Subtask骗分"><a href="#Subtask骗分" class="headerlink" title="Subtask骗分"></a>Subtask<del>骗分</del></h2><p>我们先来看看部分分：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Subtask 编号</th>
+<th style="text-align:center">数据范围</th>
+<th style="text-align:center">分值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">$n \le 5$</td>
+<td style="text-align:center">$17$</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">$d_i \le 2$</td>
+<td style="text-align:center">$23$</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">$d$ 中只含有两种本质不同的元素</td>
+<td style="text-align:center">$26$</td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:center">无特殊限制</td>
+<td style="text-align:center">$34$</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>先来分类讨论：</p>
+<p>对于Subtask 1，这个 $n \le 5$ 我真觉得没必要说，dfs应该都能过，<del>但是我没有试</del></p>
+<p>对于Subtask 1，$d_i \le 2$，这就意味着这棵树只能是一个链，而且可以证明，有且只有 2 个节点的 $d_i$ 可以为 1，否则这棵树将无法构建出 $n - 1$ 条边。</p>
+<p>我比赛的时候看到这个就异常的激动，就立刻敲代码，然后WA了一个小时。。。</p>
+<p>23分代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,s1,s2,s3) for(i = s1;i &lt;= s2;i += s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> r(i,s1,s2,s3) for(i = s1;i &gt;= s2;i -= s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sort stable_sort</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ull unsigned ll</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> a[<span class="number">200010</span>],d[<span class="number">200010</span>];</span><br><span class="line"><span class="type">bool</span> f[<span class="number">200010</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>); cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> ONLINE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    <span class="type">int</span> i,n,t;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="built_in">sizeof</span>(f));</span><br><span class="line">        a[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) cin&gt;&gt;d[i];</span><br><span class="line">        <span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="keyword">if</span>(d[i] == <span class="number">1</span>) a[++a[<span class="number">0</span>]] = i,f[i] = <span class="number">1</span>;</span><br><span class="line">        cout&lt;&lt;a[<span class="number">1</span>]&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        <span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="keyword">if</span>(!f[i]) cout&lt;&lt;i&lt;&lt;<span class="string">&#x27;\n&#x27;</span>&lt;&lt;i&lt;&lt;<span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        cout&lt;&lt;a[<span class="number">2</span>]&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>对于Subtask 3，$d$ 中只含有两种本质不同的元素，可以证明，$d$ 中必有一个及以上的 1，否则这棵树就会成为一个环<del>基环树</del>，而且这棵树必须为满 $n$ 叉树 $(n \ge 2)$，思路也非常清晰了，<del>我也懒得写代码了</del></p>
+<h2 id="正解"><a href="#正解" class="headerlink" title="正解"></a>正解</h2><blockquote>
+<p>题目中树的直径（即 $\operatorname{diam}(T)$）不会的可以去看看<a href="https://oi-wiki.org/graph/tree-diameter/">oi-wiki</a>，讲得比较好，<del>至少比某些章节讲得好一点</del></p>
+</blockquote>
+<p><strong>树的直径</strong>具有以下几个性质：</p>
+<p>我们先设树的最大深度为 $d_{max}$，树的直径为 $l$。</p>
+<p>那么</p>
+<script type="math/tex; mode=display">
+d_{max} \ge \frac{l}{2} \\
+l \le d_{max} \times 2</script><p>所以，我们可以最小化 $d_{max}$ 保证 $l$ 最小。如果这棵树 $l \le (d_{max} - 1) \times 2$，那么我们一定能构造出 $d_{max}$ 为当前 $d_{max} - 1$ 的树，所以 $d_{max} \times 2 - 1 \le l \le d_{max} \times 2$。如果我们想要使 $l = d_{max} \times 2 - 1$，那么根节点的所有子树中有且只有 1 个子树的最大深度为 $d_{max} - 1$，其余子树的最大深度为 $d_{max} - 2$，所以我们尽量使得子树的叶节点数量最大化。</p>
+<p>要求最小化最大深度，可以发现，若 $u,v$ 满足 $u$ 的深度比 $v$ 大且 $d_u \ge d_v$，那么 $u,v$ 交换一定可以使得该树在深度不变的情况下容纳更多的节点。</p>
+<p>所以，我们只需对 $d$ 从大到小排序，让深度更小的点的 $d$ 更大，这样构造一定不劣。</p>
+<p>时间复杂度：$O(\sum_{}^{}nlog(n))$</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,s1,s2,s3) for(i = s1;i &lt;= s2;i += s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> r(i,s1,s2,s3) for(i = s1;i &gt;= s2;i -= s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sort stable_sort</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    <span class="type">int</span> deep,id;</span><br><span class="line">&#125;a[<span class="number">200010</span>];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(node s1,node s2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s1.dep &lt; s2.dep;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sycn_with_stdio</span>(<span class="literal">false</span>); cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> ONIINE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    <span class="type">int</span> i,t,id;</span><br><span class="line">    cin&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">        cin&gt;&gt;n;</span><br><span class="line">        <span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) cin&gt;&gt;a[i].dep,a[i].id = i;</span><br><span class="line">        <span class="built_in">sort</span>(a + <span class="number">1</span>,a + n + <span class="number">1</span>,cmp);</span><br><span class="line">        id = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">rep</span>(i,<span class="number">2</span>,n,<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span>(!a[id].dep &amp;&amp; id &lt; i - <span class="number">1</span>) id+;</span><br><span class="line">            a[id].dep--;</span><br><span class="line">            a[i].dep--;</span><br><span class="line">            cout&lt;&lt;a[i].id&lt;&lt;<span class="string">&#x27; &#x27;</span>&lt;&lt;a[id].id&lt;&lt;<span class="string">&#x27;\n&quot;;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">    return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>luogu</category>
+      </categories>
+      <tags>
+        <tag>构造</tag>
+        <tag>树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>luogu P4330 [COCI2006-2007#1] Debug</title>
     <url>/luogu/P4330/</url>
     <content><![CDATA[<p>无耻的推荐一下我的 <a href="https://blog.csdn.net/weixin_60600142/article/details/132531624?spm=1001.2014.3001.5502">CSDN</a>。</p>
 <h2 id="暴力——人类的智慧！"><a href="#暴力——人类的智慧！" class="headerlink" title="暴力——人类的智慧！"></a>暴力——人类的智慧！</h2><p>我们可以枚举边长，然后枚举左上角，再判断是否为对称子矩形。</p>
