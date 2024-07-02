@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"holiday1314.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="无耻的推荐一下我的 CSDN。  暴力——人类的智慧！ 我们可以枚举边长，然后枚举左上角，再判断是否为对称子矩形。  步骤时间枚举边长$O(n)$枚举左上角$O(n ^ {2})$判断是否为对称子矩形$O(n ^ {2})$总时间复杂度$O(n ^ {5})$恭喜你，40 分！  优化的开始——二分！ 我们可以想想，枚举边长的时候可不可以二分呢？那么，时间复杂度就完美的把一个 $O(n)$ 降成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="P4330">
+<meta property="og:url" content="https://holiday1314.github.io/uncategorized/P4330/">
+<meta property="og:site_name" content="holiday1314&#39;s blog">
+<meta property="og:description" content="无耻的推荐一下我的 CSDN。  暴力——人类的智慧！ 我们可以枚举边长，然后枚举左上角，再判断是否为对称子矩形。  步骤时间枚举边长$O(n)$枚举左上角$O(n ^ {2})$判断是否为对称子矩形$O(n ^ {2})$总时间复杂度$O(n ^ {5})$恭喜你，40 分！  优化的开始——二分！ 我们可以想想，枚举边长的时候可不可以二分呢？那么，时间复杂度就完美的把一个 $O(n)$ 降成">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-07-02T17:25:47.000Z">
+<meta property="article:modified_time" content="2024-07-02T09:26:10.709Z">
+<meta property="article:author" content="holiday1314">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://holiday1314.github.io/uncategorized/P4330/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <title>P4330 | holiday1314's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">holiday1314's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://holiday1314.github.io/uncategorized/P4330/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="holiday1314">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="holiday1314's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          P4330
+        </h1>
+
+        <div class="post-meta">
+
+          
+            <span id="/uncategorized/P4330/" class="post-meta-item leancloud_visitors" data-flag-title="P4330" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论数：</span>
+    
+    <a title="valine" href="/uncategorized/P4330/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/uncategorized/P4330/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>无耻的推荐一下我的 <a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_60600142/article/details/132531624?spm=1001.2014.3001.5502">CSDN</a>。</p>
+<h2 id="暴力——人类的智慧！"><a href="#暴力——人类的智慧！" class="headerlink" title="暴力——人类的智慧！"></a>暴力——人类的智慧！</h2><p>我们可以枚举边长，然后枚举左上角，再判断是否为对称子矩形。</p>
+<table>
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="center">时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">枚举边长</td>
+<td align="center">$O(n)$</td>
+</tr>
+<tr>
+<td align="center">枚举左上角</td>
+<td align="center">$O(n ^ {2})$</td>
+</tr>
+<tr>
+<td align="center">判断是否为对称子矩形</td>
+<td align="center">$O(n ^ {2})$</td>
+</tr>
+<tr>
+<td align="center">总时间复杂度</td>
+<td align="center">$O(n ^ {5})$</td>
+</tr>
+</tbody></table>
+<p>恭喜你，40 分！</p>
+<h2 id="优化的开始——二分！"><a href="#优化的开始——二分！" class="headerlink" title="优化的开始——二分！"></a>优化的开始——二分！</h2><p>我们可以想想，枚举边长的时候可不可以二分呢？那么，时间复杂度就完美的把一个 $O(n)$ 降成 $O(\log {n})$。</p>
+<table>
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="center">时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">枚举边长</td>
+<td align="center">$O(\log n)$</td>
+</tr>
+<tr>
+<td align="center">枚举左上角</td>
+<td align="center">$O(n ^ {2})$</td>
+</tr>
+<tr>
+<td align="center">判断是否为对称子矩形</td>
+<td align="center">$O(n ^ {2})$</td>
+</tr>
+<tr>
+<td align="center">总时间复杂度</td>
+<td align="center">$O(n ^ {4} \log n)$</td>
+</tr>
+</tbody></table>
+<p>虽然不知道有多少分<del>（懒得测了）</del>，但时间复杂度已经降下来了。</p>
+<h2 id="只判断边框——降了一个-O-n-！"><a href="#只判断边框——降了一个-O-n-！" class="headerlink" title="只判断边框——降了一个 $O(n)$！"></a>只判断边框——降了一个 $O(n)$！</h2><p>我们在判断的时候会出现多余的地方，用一个 $flag[x][y][len]$ 数组记录以 $(x,y)$ 为左上角，边长为 $len$ 的矩阵是否为回文串，每次判断的时候如果 $flag[x + 1][y + 1][len - 2]$ 为假，直接跳掉，每次判断的时候只要判断两条长和两条宽就行了。</p>
+<table>
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="center">时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">枚举边长</td>
+<td align="center">$O(n)$ 或 $O(\log {n})$</td>
+</tr>
+<tr>
+<td align="center">枚举左上角</td>
+<td align="center">$O(n ^ {2})$</td>
+</tr>
+<tr>
+<td align="center">判断是否为对称子矩形</td>
+<td align="center">$O({n})$</td>
+</tr>
+<tr>
+<td align="center">总时间复杂度</td>
+<td align="center">$O(n ^ {4})$ 或 $O(n ^ {3} \log {n})$</td>
+</tr>
+</tbody></table>
+<p>$O(n ^ {3} \log {n})$ 接近 $O(n ^ {3})$ 有 100 的希望了！</p>
+<h2 id="逆流而上——又优化了一点点！"><a href="#逆流而上——又优化了一点点！" class="headerlink" title="逆流而上——又优化了一点点！"></a>逆流而上——又优化了一点点！</h2><p>我们可以倒着枚举边长，只要找到了，退出整个循环，有可能优化一点点，但效果不明显<del>（卡常用）</del>。</p>
+<h2 id="几个long-long跑得快——二进制拆分！"><a href="#几个long-long跑得快——二进制拆分！" class="headerlink" title="几个long long跑得快——二进制拆分！"></a>几个long long跑得快——二进制拆分！</h2><p>我们可以每 64 个数为一组，判断的时候直接 $O(n \log {n})$，$O(\log {n})$ 直接可以忽略不计！</p>
+<table>
+<thead>
+<tr>
+<th align="center">步骤</th>
+<th align="center">时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">枚举边长</td>
+<td align="center">$O(n)$ 或 $O(\log {n})$</td>
+</tr>
+<tr>
+<td align="center">枚举左上角</td>
+<td align="center">$O(n ^ {2})$</td>
+</tr>
+<tr>
+<td align="center">判断是否为对称子矩形</td>
+<td align="center">$O(n \log {n})$</td>
+</tr>
+<tr>
+<td align="center">总时间复杂度</td>
+<td align="center">$O(n ^ {4} \log {n})$ 或 $O(n ^ {3} {\log ^ 2 {n}})$</td>
+</tr>
+</tbody></table>
+<h2 id="一个矩阵一个数——二维hash！"><a href="#一个矩阵一个数——二维hash！" class="headerlink" title="一个矩阵一个数——二维hash！"></a>一个矩阵一个数——二维hash！</h2><p>枚举边长和左上角不能再优化了，但判断的时间复杂度可以降成 $O(1)$！二维 HASH 上场！<br>我们用p1、p2表示两个质数（随便什么质数都可以，不同就行了），第i行j列的数为 $a _ {ij} \times p1 ^ {i} \times p2 ^ {j}$，然后矩阵的哈希值就是所有数的和。<br>$$<br>H &#x3D; (\sum a _ {ij} \times p1 ^ {i} \times p2 ^ {j}) \bmod mod<br>$$</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,s1,s2,s3) for(i = s1;i &lt;= s2;i += s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> r(i,s1,s2,s3) for(i = s1;i &gt;= s2;i -= s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sort stable_sort</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ull p1[<span class="number">1010</span>],p2[<span class="number">1010</span>],h1[<span class="number">1010</span>][<span class="number">1010</span>],h2[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="type">int</span> n,m,ans,a[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>); cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="comment">//freopen(&quot;.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">	<span class="comment">//freopen(&quot;.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="type">int</span> i,j,l;</span><br><span class="line">	ull s1,s2;</span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m,<span class="number">1</span>) cin&gt;&gt;ch,a[i][j] = ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n + m,<span class="number">1</span>) p1[i] = <span class="number">2</span> * p1[i - <span class="number">1</span>],p2[i] = <span class="number">3</span> * p2[i - <span class="number">1</span>];</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="built_in">rep</span>(i,<span class="number">1</span>,m,<span class="number">1</span>)</span><br><span class="line">		h1[i][j] = h1[i - <span class="number">1</span>][j] + h1[i][j - <span class="number">1</span>] - h1[i - <span class="number">1</span>][j - <span class="number">1</span>] + </span><br><span class="line">					p1[i] * p2[j] * a[i][j];</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="built_in">rep</span>(i,<span class="number">1</span>,m,<span class="number">1</span>)</span><br><span class="line">		h2[i][j] = h2[i + <span class="number">1</span>][j] + h2[i][j + <span class="number">1</span>] - h2[i + <span class="number">1</span>][j + <span class="number">1</span>] + </span><br><span class="line">					p2[n - i + <span class="number">1</span>] * p2[m - j + <span class="number">1</span>] * a[i][j];</span><br><span class="line">	<span class="built_in">rep</span>(l,<span class="number">1</span>,<span class="built_in">min</span>(n,m),<span class="number">1</span>) <span class="built_in">rep</span>(i,<span class="number">1</span>,n - l,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m - l,<span class="number">1</span>)&#123;</span><br><span class="line">		s1 = h1[i + l][j + l] - h1[i + l][j - <span class="number">1</span>] - h1[i - <span class="number">1</span>][j + l] + h1[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line">		s2 = h2[i + l][j + l] - h2[i + l][j + <span class="number">1</span>] - h2[i + <span class="number">1</span>][j + l] + h2[i + <span class="number">1</span>][j + <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span>(s1 == s2)&#123;</span><br><span class="line">			ans = l;</span><br><span class="line">			l++;</span><br><span class="line">			i = <span class="number">1</span>,j = <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans &gt; <span class="number">1</span>) cout&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">else</span> cout&lt;&lt;<span class="number">-1</span>; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>恭喜，18 分。</p>
+<hr>
+<p>让我们想想，设矩阵的左上角为 $(x,y)$，我们算出来的矩阵的值会多出 $p1 ^ {x - 1} \times p2 ^ {y - 1}$ 倍！怎么办？除掉？<del>（我不会）</del>只有乘。</p>
+<h3 id="交叉相乘法"><a href="#交叉相乘法" class="headerlink" title="交叉相乘法"></a>交叉相乘法</h3><p>小学知识：<br>$$<br>\frac{s1}{p1 ^ {x - 1} \times p2 ^ {y - 1}} &#x3D; \frac{s2}{p1 ^ {n - x - l} \times p2 ^ {n - y - l}}<br>$$<br>$$<br>s1 \times p1 ^ {n - x - l} \times p2 ^ {n - y - l} &#x3D; s2 \times p1 ^ {x - 1} \times p2 ^ {y - 1}<br>$$<br>所以，代码来——</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,s1,s2,s3) for(i = s1;i &lt;= s2;i += s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> r(i,s1,s2,s3) for(i = s1;i &gt;= s2;i -= s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sort stable_sort</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ull p1[<span class="number">1010</span>],p2[<span class="number">1010</span>],h1[<span class="number">1010</span>][<span class="number">1010</span>],h2[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="type">int</span> n,m,ans,a[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>); cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="comment">//freopen(&quot;.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">	<span class="comment">//freopen(&quot;.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="type">int</span> i,j,l;</span><br><span class="line">	ull s1,s2;</span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m,<span class="number">1</span>) cin&gt;&gt;ch,a[i][j] = ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	p1[<span class="number">0</span>] = p2[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,<span class="built_in">max</span>(n,m),<span class="number">1</span>) p1[i] = <span class="number">101</span> * p1[i - <span class="number">1</span>],p2[i] = <span class="number">131</span> * p2[i - <span class="number">1</span>];</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m,<span class="number">1</span>)</span><br><span class="line">		h1[i][j] = h1[i - <span class="number">1</span>][j] + h1[i][j - <span class="number">1</span>] - h1[i - <span class="number">1</span>][j - <span class="number">1</span>] + </span><br><span class="line">					p1[i] * p2[j] * a[i][j];</span><br><span class="line">	<span class="built_in">r</span>(i,n,<span class="number">1</span>,<span class="number">1</span>) <span class="built_in">r</span>(j,m,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">		h2[i][j] = h2[i + <span class="number">1</span>][j] + h2[i][j + <span class="number">1</span>] - h2[i + <span class="number">1</span>][j + <span class="number">1</span>] + </span><br><span class="line">					p1[n - i + <span class="number">1</span>] * p2[m - j + <span class="number">1</span>] * a[i][j];</span><br><span class="line">	<span class="built_in">rep</span>(l,<span class="number">1</span>,<span class="built_in">min</span>(n,m),<span class="number">1</span>) <span class="built_in">rep</span>(i,<span class="number">1</span>,n - l,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m - l,<span class="number">1</span>)&#123;</span><br><span class="line">		s1 = (h1[i + l][j + l] - h1[i + l][j - <span class="number">1</span>] - h1[i - <span class="number">1</span>][j + l] + h1[i - <span class="number">1</span>][j - <span class="number">1</span>]) * p1[n - i - l] * p2[m - j - l];</span><br><span class="line">		s2 = (h2[i][j] - h2[i + l + <span class="number">1</span>][j] - h2[i][j + l + <span class="number">1</span>] + h2[i + l + <span class="number">1</span>][j + l + <span class="number">1</span>]) * p1[i - <span class="number">1</span>] * p2[j - <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span>(s1 == s2)&#123;</span><br><span class="line">			ans = l + <span class="number">1</span>;</span><br><span class="line">			i = n,j = m;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans &gt; <span class="number">1</span>) cout&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">else</span> cout&lt;&lt;<span class="number">-1</span>; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="统一倍数法"><a href="#统一倍数法" class="headerlink" title="统一倍数法"></a>统一倍数法</h3><p>既然我们要减小倍数，保证他们的倍数统一，那么我们不如将倍数扩大保证他们统一，我的方法就是把他扩大成 $p1 ^ {n} \times p2 ^ {m}$，这样他们的倍数就统一了，也可以正常比较了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,s1,s2,s3) for(i = s1;i &lt;= s2;i += s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> r(i,s1,s2,s3) for(i = s1;i &gt;= s2;i -= s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sort stable_sort</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ull p1[<span class="number">1010</span>],p2[<span class="number">1010</span>],h1[<span class="number">1010</span>][<span class="number">1010</span>],h2[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="type">int</span> n,m,ans,a[<span class="number">1010</span>][<span class="number">1010</span>];</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>); cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="comment">//freopen(&quot;.in&quot;,&quot;r&quot;,stdin);</span></span><br><span class="line">	<span class="comment">//freopen(&quot;.out&quot;,&quot;w&quot;,stdout);</span></span><br><span class="line">	cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="type">int</span> i,j,l;</span><br><span class="line">	ull s1,s2;</span><br><span class="line">	<span class="type">char</span> ch;</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m,<span class="number">1</span>) cin&gt;&gt;ch,a[i][j] = ch - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">	p1[<span class="number">0</span>] = p2[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,<span class="built_in">max</span>(n,m),<span class="number">1</span>) p1[i] = <span class="number">101</span> * p1[i - <span class="number">1</span>],p2[i] = <span class="number">131</span> * p2[i - <span class="number">1</span>];<span class="comment">//����ģ����unsigned long long��Ȼ����Ϳ����� </span></span><br><span class="line">	<span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m,<span class="number">1</span>)</span><br><span class="line">		h1[i][j] = h1[i - <span class="number">1</span>][j] + h1[i][j - <span class="number">1</span>] - h1[i - <span class="number">1</span>][j - <span class="number">1</span>] + </span><br><span class="line">					p1[i] * p2[j] * a[i][j];</span><br><span class="line">	<span class="built_in">r</span>(i,n,<span class="number">1</span>,<span class="number">1</span>) <span class="built_in">r</span>(j,m,<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">		h2[i][j] = h2[i + <span class="number">1</span>][j] + h2[i][j + <span class="number">1</span>] - h2[i + <span class="number">1</span>][j + <span class="number">1</span>] + </span><br><span class="line">					p1[n - i + <span class="number">1</span>] * p2[m - j + <span class="number">1</span>] * a[i][j];</span><br><span class="line">	<span class="built_in">rep</span>(l,<span class="number">1</span>,<span class="built_in">min</span>(n,m),<span class="number">1</span>) <span class="built_in">rep</span>(i,<span class="number">1</span>,n - l,<span class="number">1</span>) <span class="built_in">rep</span>(j,<span class="number">1</span>,m - l,<span class="number">1</span>)&#123;</span><br><span class="line">		s1 = (h1[i + l][j + l] - h1[i + l][j - <span class="number">1</span>] - h1[i - <span class="number">1</span>][j + l] + h1[i - <span class="number">1</span>][j - <span class="number">1</span>]) * p1[n - i] * p2[m - j];</span><br><span class="line">		s2 = (h2[i][j] - h2[i + l + <span class="number">1</span>][j] - h2[i][j + l + <span class="number">1</span>] + h2[i + l + <span class="number">1</span>][j + l + <span class="number">1</span>]) * p1[i + l - <span class="number">1</span>] * p2[j + l - <span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span>(s1 == s2)&#123;</span><br><span class="line">			ans = l + <span class="number">1</span>;</span><br><span class="line">			i = n,j = m;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans &gt; <span class="number">1</span>) cout&lt;&lt;ans;</span><br><span class="line">	<span class="keyword">else</span> cout&lt;&lt;<span class="number">-1</span>; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>如果我写得好，就给我投点币吧</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="holiday1314 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>holiday1314
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://holiday1314.github.io/uncategorized/P4330/" title="P4330">https://holiday1314.github.io/uncategorized/P4330/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" rel="prev" title="vscode配置教程">
+      <i class="fa fa-chevron-left"></i> vscode配置教程
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B%E2%80%94%E2%80%94%E4%BA%BA%E7%B1%BB%E7%9A%84%E6%99%BA%E6%85%A7%EF%BC%81"><span class="nav-number">1.</span> <span class="nav-text">暴力——人类的智慧！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%9A%84%E5%BC%80%E5%A7%8B%E2%80%94%E2%80%94%E4%BA%8C%E5%88%86%EF%BC%81"><span class="nav-number">2.</span> <span class="nav-text">优化的开始——二分！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AA%E5%88%A4%E6%96%AD%E8%BE%B9%E6%A1%86%E2%80%94%E2%80%94%E9%99%8D%E4%BA%86%E4%B8%80%E4%B8%AA-O-n-%EF%BC%81"><span class="nav-number">3.</span> <span class="nav-text">只判断边框——降了一个 $O(n)$！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%86%E6%B5%81%E8%80%8C%E4%B8%8A%E2%80%94%E2%80%94%E5%8F%88%E4%BC%98%E5%8C%96%E4%BA%86%E4%B8%80%E7%82%B9%E7%82%B9%EF%BC%81"><span class="nav-number">4.</span> <span class="nav-text">逆流而上——又优化了一点点！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%A0%E4%B8%AAlong-long%E8%B7%91%E5%BE%97%E5%BF%AB%E2%80%94%E2%80%94%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%8B%86%E5%88%86%EF%BC%81"><span class="nav-number">5.</span> <span class="nav-text">几个long long跑得快——二进制拆分！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%9F%A9%E9%98%B5%E4%B8%80%E4%B8%AA%E6%95%B0%E2%80%94%E2%80%94%E4%BA%8C%E7%BB%B4hash%EF%BC%81"><span class="nav-number">6.</span> <span class="nav-text">一个矩阵一个数——二维hash！</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%A4%E5%8F%89%E7%9B%B8%E4%B9%98%E6%B3%95"><span class="nav-number">6.1.</span> <span class="nav-text">交叉相乘法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%9F%E4%B8%80%E5%80%8D%E6%95%B0%E6%B3%95"><span class="nav-number">6.2.</span> <span class="nav-text">统一倍数法</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="holiday1314"
+      src="/css/images/avatar.png">
+  <p class="site-author-name" itemprop="name">holiday1314</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/holiday1314" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;holiday1314" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:3286917231@qq.com" title="E-Mail → mailto:3286917231@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">holiday1314</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'GTN79Hhinl03ncIpqLS0yYSQ-gzGzoHsz',
+      appKey     : 'OKXCrohJmkfj3Qd682zEj2gn',
+      placeholder: "在这里写下你的评论吧！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-CN' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>

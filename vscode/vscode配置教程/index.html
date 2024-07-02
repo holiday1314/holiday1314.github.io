@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"holiday1314.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一、安装vscode 进入vscode官网：https:&#x2F;&#x2F;vscode.cdn.azure.cn&#x2F;stable&#x2F;6c3e3dba23e8fadc360aed75ce363ba185c49794&#x2F;VSCodeSetup-x64-1.81.1.exe，选择你要下载的类型，即可下载。 下载时只要把第2页“我不同意此协议”改成“我同意此协议”就行了。  二、配置vscode 1.我们需要下载Chines">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vscode配置教程">
+<meta property="og:url" content="https://holiday1314.github.io/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
+<meta property="og:site_name" content="holiday1314&#39;s blog">
+<meta property="og:description" content="一、安装vscode 进入vscode官网：https:&#x2F;&#x2F;vscode.cdn.azure.cn&#x2F;stable&#x2F;6c3e3dba23e8fadc360aed75ce363ba185c49794&#x2F;VSCodeSetup-x64-1.81.1.exe，选择你要下载的类型，即可下载。 下载时只要把第2页“我不同意此协议”改成“我同意此协议”就行了。  二、配置vscode 1.我们需要下载Chines">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/81a4682e33f44e58ad55f593862894b0.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/8aa16fddb7f44fca8b4dfa2363f907ab.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/01e52d6f380248f8892dbdecff19c405.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/c84f1665f26c48408c4fee310fb58172.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20bd162eea1b47fc9db6abedd26e706e.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/a9a83e96fc604b8d87141588903cf59f.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/03584d41ca4246d093865295689f64bc.png#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/cbe157bb51c74349a49e12e9f843c81d.png#pic_center">
+<meta property="article:published_time" content="2024-07-02T17:18:31.000Z">
+<meta property="article:modified_time" content="2024-07-02T09:21:19.885Z">
+<meta property="article:author" content="holiday1314">
+<meta property="article:tag" content="编辑器配置">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/81a4682e33f44e58ad55f593862894b0.png#pic_center">
+
+<link rel="canonical" href="https://holiday1314.github.io/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
+  <title>vscode配置教程 | holiday1314's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<style>.darkmode--activated{--body-bg-color:#282828;--content-bg-color:#333;--card-bg-color:#555;--text-color:#ccc;--blockquote-color:#bbb;--link-color:#ccc;--link-hover-color:#eee;--brand-color:#ddd;--brand-hover-color:#ddd;--table-row-odd-bg-color:#282828;--table-row-hover-bg-color:#363636;--menu-item-bg-color:#555;--btn-default-bg:#222;--btn-default-color:#ccc;--btn-default-border-color:#555;--btn-default-hover-bg:#666;--btn-default-hover-color:#ccc;--btn-default-hover-border-color:#666;--highlight-background:#282b2e;--highlight-foreground:#a9b7c6;--highlight-gutter-background:#34393d;--highlight-gutter-foreground:#9ca9b6}.darkmode--activated img{opacity:.75}.darkmode--activated img:hover{opacity:.9}.darkmode--activated code{color:#69dbdc;background:0 0}button.darkmode-toggle{z-index:9999}.darkmode-ignore,img{display:flex!important}.beian img{display:inline-block!important}</style></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">holiday1314's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">1</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://holiday1314.github.io/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="holiday1314">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="holiday1314's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vscode配置教程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vscode/" itemprop="url" rel="index"><span itemprop="name">vscode</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" class="post-meta-item leancloud_visitors" data-flag-title="vscode配置教程" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论数：</span>
+    
+    <a title="valine" href="/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="一、安装vscode"><a href="#一、安装vscode" class="headerlink" title="一、安装vscode"></a>一、安装vscode</h1><p>进入vscode官网：<a target="_blank" rel="noopener" href="https://vscode.cdn.azure.cn/stable/6c3e3dba23e8fadc360aed75ce363ba185c49794/VSCodeSetup-x64-1.81.1.exe">https://vscode.cdn.azure.cn/stable/6c3e3dba23e8fadc360aed75ce363ba185c49794/VSCodeSetup-x64-1.81.1.exe</a>，选择你要下载的类型，即可下载。<br>下载时只要把第2页“我不同意此协议”改成“我同意此协议”就行了。</p>
+<h1 id="二、配置vscode"><a href="#二、配置vscode" class="headerlink" title="二、配置vscode"></a>二、配置vscode</h1><p>1.我们需要下载Chinese (Simplified) (简体中文) Language Pack for Visual Studio Code这个插件，点击左侧第5个按扭，输入“chinese”，选择这个插件，点击“install”，下载好了下发会出现一个小窗口，点击这个小窗口的蓝色的按钮就可以改成中文了。<br><img src="https://img-blog.csdnimg.cn/81a4682e33f44e58ad55f593862894b0.png#pic_center"><br>2.再在这个地方搜索“C++”，选择第一个，点击安装，因为我下载过了，所以我这没有。<br><img src="https://img-blog.csdnimg.cn/8aa16fddb7f44fca8b4dfa2363f907ab.png#pic_center"><br>3.你要下一个c++MinGW64的包，我下的位置是C:&#x2F;TDM-GCC-64，自行修改。随便写一个c++代码，运行，他会给你丢出一个报错，不管他，你会发现多了一个.VSCODE文件夹，里面还有一个.vscode文件夹，点击去，创建4个文件，如下所示：<br><strong>c_cpp_properties.json</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;windows-gcc-x64&quot;</span>,</span><br><span class="line">      <span class="string">&quot;includePath&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;$&#123;workspaceFolder&#125;/**&quot;</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="string">&quot;defines&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;_DEBUG&quot;</span>,</span><br><span class="line">        <span class="string">&quot;UNICODE&quot;</span>,</span><br><span class="line">        <span class="string">&quot;_UNICODE&quot;</span></span><br><span class="line">      ],</span><br><span class="line">      <span class="string">&quot;windowsSdkVersion&quot;</span>: <span class="string">&quot;10.0.22000.0&quot;</span>,</span><br><span class="line">      <span class="string">&quot;compilerPath&quot;</span>: <span class="string">&quot;D:/Msys2-64bit/ucrt64/bin/gcc.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;cStandard&quot;</span>: <span class="string">&quot;$&#123;default&#125;&quot;</span>,</span><br><span class="line">      <span class="string">&quot;cppStandard&quot;</span>: <span class="string">&quot;$&#123;default&#125;&quot;</span>,</span><br><span class="line">      <span class="string">&quot;intelliSenseMode&quot;</span>: <span class="string">&quot;windows-gcc-x64&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="number">4</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>launch.json</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;configurations&quot;</span>: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;C/C++: g++.exe build and debug active file&quot;</span>,</span><br><span class="line">      <span class="string">&quot;type&quot;</span>: <span class="string">&quot;cppdbg&quot;</span>,</span><br><span class="line">      <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">      <span class="string">&quot;program&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: [],</span><br><span class="line">      <span class="string">&quot;stopAtEntry&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="string">&quot;cwd&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span>,</span><br><span class="line">      <span class="string">&quot;environment&quot;</span>: [],</span><br><span class="line">      <span class="string">&quot;externalConsole&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="string">&quot;MIMode&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">      <span class="string">&quot;miDebuggerPath&quot;</span>: <span class="string">&quot;D:\\msys2-x86_64\\ucrt64\\bin\\gdb.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;setupCommands&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;description&quot;</span>: <span class="string">&quot;Enable pretty-printing for gdb&quot;</span>,</span><br><span class="line">          <span class="string">&quot;text&quot;</span>: <span class="string">&quot;-enable-pretty-printing&quot;</span>,</span><br><span class="line">          <span class="string">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;description&quot;</span>: <span class="string">&quot;Set Disassembly Flavor to Intel&quot;</span>,</span><br><span class="line">          <span class="string">&quot;text&quot;</span>: <span class="string">&quot;-gdb-set disassembly-flavor intel&quot;</span>,</span><br><span class="line">          <span class="string">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      <span class="string">&quot;preLaunchTask&quot;</span>: <span class="string">&quot;C/C++: g++.exe build active file&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成和调试活动文件&quot;</span>,</span><br><span class="line">      <span class="string">&quot;type&quot;</span>: <span class="string">&quot;cppdbg&quot;</span>,</span><br><span class="line">      <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">      <span class="string">&quot;program&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: [],</span><br><span class="line">      <span class="string">&quot;stopAtEntry&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="string">&quot;cwd&quot;</span>: <span class="string">&quot;D:/Msys2-64bit/mingw64/bin&quot;</span>,</span><br><span class="line">      <span class="string">&quot;environment&quot;</span>: [],</span><br><span class="line">      <span class="string">&quot;externalConsole&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="string">&quot;MIMode&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">      <span class="string">&quot;miDebuggerPath&quot;</span>: <span class="string">&quot;D:\\Msys2-64bit\\mingw64\\bin\\gdb.exe&quot;</span>,</span><br><span class="line">      <span class="string">&quot;setupCommands&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;description&quot;</span>: <span class="string">&quot;为 gdb 启用整齐打印&quot;</span>,</span><br><span class="line">          <span class="string">&quot;text&quot;</span>: <span class="string">&quot;-enable-pretty-printing&quot;</span>,</span><br><span class="line">          <span class="string">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;description&quot;</span>: <span class="string">&quot;将反汇编风格设置为 Intel&quot;</span>,</span><br><span class="line">          <span class="string">&quot;text&quot;</span>: <span class="string">&quot;-gdb-set disassembly-flavor intel&quot;</span>,</span><br><span class="line">          <span class="string">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ],</span><br><span class="line">      <span class="string">&quot;preLaunchTask&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成活动文件&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="string">&quot;name&quot;</span>: <span class="string">&quot;C/C++ Runner: Debug Session&quot;</span>,</span><br><span class="line">      <span class="string">&quot;type&quot;</span>: <span class="string">&quot;cppdbg&quot;</span>,</span><br><span class="line">      <span class="string">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">      <span class="string">&quot;args&quot;</span>: [],</span><br><span class="line">      <span class="string">&quot;stopAtEntry&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">      <span class="string">&quot;externalConsole&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">      <span class="string">&quot;cwd&quot;</span>: <span class="string">&quot;d:/code/c++&quot;</span>,</span><br><span class="line">      <span class="string">&quot;program&quot;</span>: <span class="string">&quot;d:/code/c++/build/Debug/outDebug&quot;</span>,</span><br><span class="line">      <span class="string">&quot;MIMode&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">      <span class="string">&quot;miDebuggerPath&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">      <span class="string">&quot;setupCommands&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">          <span class="string">&quot;description&quot;</span>: <span class="string">&quot;Enable pretty-printing for gdb&quot;</span>,</span><br><span class="line">          <span class="string">&quot;text&quot;</span>: <span class="string">&quot;-enable-pretty-printing&quot;</span>,</span><br><span class="line">          <span class="string">&quot;ignoreFailures&quot;</span>: <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;version&quot;</span>: <span class="string">&quot;2.0.0&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>settings.json</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;code-runner.runInTerminal&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;code-runner.executorMap&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;javascript&quot;</span>: <span class="string">&quot;node&quot;</span>,</span><br><span class="line">    <span class="string">&quot;java&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; javac $fileName &amp;&amp; java $fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;c&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; gcc $fileName -o $fileNameWithoutExt -finput-charset=UTF-8 -fexec-charset=GBK &amp;&amp; d i r dirdirfileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;zig&quot;</span>: <span class="string">&quot;zig run&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cpp&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; g++ $fileName -Wall -std=c++20 -g -o $fileNameWithoutExt -finput-charset=UTF-8 -fexec-charset=GBK &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;objective-c&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; gcc -framework Cocoa $fileName -o $fileNameWithoutExt -finput-charset=UTF-8 -fexec-charset=GBK &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;php&quot;</span>: <span class="string">&quot;php&quot;</span>,</span><br><span class="line">    <span class="string">&quot;python&quot;</span>: <span class="string">&quot;python -u&quot;</span>,</span><br><span class="line">    <span class="string">&quot;perl&quot;</span>: <span class="string">&quot;perl&quot;</span>,</span><br><span class="line">    <span class="string">&quot;perl6&quot;</span>: <span class="string">&quot;perl6&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ruby&quot;</span>: <span class="string">&quot;ruby&quot;</span>,</span><br><span class="line">    <span class="string">&quot;go&quot;</span>: <span class="string">&quot;go run&quot;</span>,</span><br><span class="line">    <span class="string">&quot;lua&quot;</span>: <span class="string">&quot;lua&quot;</span>,</span><br><span class="line">    <span class="string">&quot;groovy&quot;</span>: <span class="string">&quot;groovy&quot;</span>,</span><br><span class="line">    <span class="string">&quot;powershell&quot;</span>: <span class="string">&quot;powershell -ExecutionPolicy ByPass -File&quot;</span>,</span><br><span class="line">    <span class="string">&quot;bat&quot;</span>: <span class="string">&quot;cmd /c&quot;</span>,</span><br><span class="line">    <span class="string">&quot;shellscript&quot;</span>: <span class="string">&quot;bash&quot;</span>,</span><br><span class="line">    <span class="string">&quot;fsharp&quot;</span>: <span class="string">&quot;fsi&quot;</span>,</span><br><span class="line">    <span class="string">&quot;csharp&quot;</span>: <span class="string">&quot;scriptcs&quot;</span>,</span><br><span class="line">    <span class="string">&quot;vbscript&quot;</span>: <span class="string">&quot;cscript //Nologo&quot;</span>,</span><br><span class="line">    <span class="string">&quot;typescript&quot;</span>: <span class="string">&quot;ts-node&quot;</span>,</span><br><span class="line">    <span class="string">&quot;coffeescript&quot;</span>: <span class="string">&quot;coffee&quot;</span>,</span><br><span class="line">    <span class="string">&quot;scala&quot;</span>: <span class="string">&quot;scala&quot;</span>,</span><br><span class="line">    <span class="string">&quot;swift&quot;</span>: <span class="string">&quot;swift&quot;</span>,</span><br><span class="line">    <span class="string">&quot;julia&quot;</span>: <span class="string">&quot;julia&quot;</span>,</span><br><span class="line">    <span class="string">&quot;crystal&quot;</span>: <span class="string">&quot;crystal&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ocaml&quot;</span>: <span class="string">&quot;ocaml&quot;</span>,</span><br><span class="line">    <span class="string">&quot;r&quot;</span>: <span class="string">&quot;Rscript&quot;</span>,</span><br><span class="line">    <span class="string">&quot;applescript&quot;</span>: <span class="string">&quot;osascript&quot;</span>,</span><br><span class="line">    <span class="string">&quot;clojure&quot;</span>: <span class="string">&quot;lein exec&quot;</span>,</span><br><span class="line">    <span class="string">&quot;haxe&quot;</span>: <span class="string">&quot;haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;rust&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; rustc $fileName &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;racket&quot;</span>: <span class="string">&quot;racket&quot;</span>,</span><br><span class="line">    <span class="string">&quot;scheme&quot;</span>: <span class="string">&quot;csi -script&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ahk&quot;</span>: <span class="string">&quot;autohotkey&quot;</span>,</span><br><span class="line">    <span class="string">&quot;autoit&quot;</span>: <span class="string">&quot;autoit3&quot;</span>,</span><br><span class="line">    <span class="string">&quot;dart&quot;</span>: <span class="string">&quot;dart&quot;</span>,</span><br><span class="line">    <span class="string">&quot;pascal&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; fpc $fileName &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;d&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; dmd $fileName &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;haskell&quot;</span>: <span class="string">&quot;runghc&quot;</span>,</span><br><span class="line">    <span class="string">&quot;nim&quot;</span>: <span class="string">&quot;nim compile --verbosity:0 --hints:off --run&quot;</span>,</span><br><span class="line">    <span class="string">&quot;lisp&quot;</span>: <span class="string">&quot;sbcl --script&quot;</span>,</span><br><span class="line">    <span class="string">&quot;kit&quot;</span>: <span class="string">&quot;kitc --run&quot;</span>,</span><br><span class="line">    <span class="string">&quot;v&quot;</span>: <span class="string">&quot;v run&quot;</span>,</span><br><span class="line">    <span class="string">&quot;sass&quot;</span>: <span class="string">&quot;sass --style expanded&quot;</span>,</span><br><span class="line">    <span class="string">&quot;scss&quot;</span>: <span class="string">&quot;scss --style expanded&quot;</span>,</span><br><span class="line">    <span class="string">&quot;less&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; lessc $fileName $fileNameWithoutExt.css&quot;</span>,</span><br><span class="line">    <span class="string">&quot;FortranFreeForm&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;fortran-modern&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;fortran_fixed-form&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;fortran&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; gfortran $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;</span>,</span><br><span class="line">    <span class="string">&quot;sml&quot;</span>: <span class="string">&quot;cd $dir &amp;&amp; sml $fileName&quot;</span>,</span><br><span class="line">    <span class="string">&quot;mojo&quot;</span>: <span class="string">&quot;mojo run&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;files.associations&quot;</span>: &#123;</span><br><span class="line">    <span class="string">&quot;any&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;array&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;atomic&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;barrier&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;bit&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.tcc&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;bitset&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cctype&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cfenv&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;charconv&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;chrono&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cinttypes&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;clocale&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cmath&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;codecvt&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;compare&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;complex&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;concepts&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;condition_variable&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;coroutine&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;csetjmp&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;csignal&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cstdarg&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cstddef&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cstdint&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cstdio&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cstdlib&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cstring&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ctime&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cuchar&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cwchar&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;cwctype&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;deque&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;forward_list&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;list&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;map&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;set&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;string&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;unordered_map&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;unordered_set&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;vector&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;exception&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;expected&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;algorithm&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;functional&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;iterator&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;memory&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;memory_resource&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;numeric&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;optional&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;random&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ratio&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;regex&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;source_location&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;string_view&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;system_error&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;tuple&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;type_traits&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;utility&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;format&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;fstream&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;future&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;initializer_list&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;iomanip&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;iosfwd&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;iostream&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;istream&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;latch&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;limits&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;mutex&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;new&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;numbers&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ostream&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;ranges&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;scoped_allocator&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;semaphore&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;shared_mutex&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;span&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;spanstream&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;sstream&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;stacktrace&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;stdexcept&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;stdfloat&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;stop_token&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;streambuf&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;syncstream&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;thread&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;typeindex&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;typeinfo&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;valarray&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;variant&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.inc&quot;</span>: <span class="string">&quot;cpp&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*.def&quot;</span>: <span class="string">&quot;cpp&quot;</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="string">&quot;python.testing.unittestArgs&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;-v&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-s&quot;</span>,</span><br><span class="line">    <span class="string">&quot;./python&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-p&quot;</span>,</span><br><span class="line">    <span class="string">&quot;*test*.py&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;python.testing.pytestEnabled&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;python.testing.unittestEnabled&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;files.autoSave&quot;</span>: <span class="string">&quot;afterDelay&quot;</span>,</span><br><span class="line">  <span class="string">&quot;explorer.confirmDelete&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;chatgpt.lang&quot;</span>: <span class="string">&quot;cn&quot;</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp.default.compilerArgs&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;-std=c++20&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-g&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.msvcBatchPath&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.cCompilerPath&quot;</span>: <span class="string">&quot;gcc&quot;</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.cppCompilerPath&quot;</span>: <span class="string">&quot;g++&quot;</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.debuggerPath&quot;</span>: <span class="string">&quot;gdb&quot;</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.cStandard&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.cppStandard&quot;</span>: <span class="string">&quot;&quot;</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.useMsvc&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.warnings&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;-Wall&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wextra&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wpedantic&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wshadow&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wformat=2&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wcast-align&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wconversion&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wsign-conversion&quot;</span>,</span><br><span class="line">    <span class="string">&quot;-Wnull-dereference&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.msvcWarnings&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;/W4&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/permissive-&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14242&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14287&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14296&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14311&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14826&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w44062&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w44242&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14905&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14906&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14263&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w44265&quot;</span>,</span><br><span class="line">    <span class="string">&quot;/w14928&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.enableWarnings&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.warningsAsError&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.compilerArgs&quot;</span>: [],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.linkerArgs&quot;</span>: [],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.includePaths&quot;</span>: [],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.includeSearch&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;*&quot;</span>,</span><br><span class="line">    <span class="string">&quot;**/*&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.excludeSearch&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;**/build&quot;</span>,</span><br><span class="line">    <span class="string">&quot;**/build/**&quot;</span>,</span><br><span class="line">    <span class="string">&quot;**/.*&quot;</span>,</span><br><span class="line">    <span class="string">&quot;**/.*/**&quot;</span>,</span><br><span class="line">    <span class="string">&quot;**/.vscode&quot;</span>,</span><br><span class="line">    <span class="string">&quot;**/.vscode/**&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.useAddressSanitizer&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.useUndefinedSanitizer&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.useLeakSanitizer&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.showCompilationTime&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.useLinkTimeOptimization&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="string">&quot;C_Cpp_Runner.msvcSecureNoWarnings&quot;</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>tasks.josn</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;tasks&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;cppbuild&quot;</span>,</span><br><span class="line">            <span class="string">&quot;label&quot;</span>: <span class="string">&quot;C/C++: g++.exe build active file&quot;</span>,</span><br><span class="line">            <span class="string">&quot;command&quot;</span>: <span class="string">&quot;D:\\msys2-x86_64\\ucrt64\\bin\\g++.exe&quot;</span>,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;-fdiagnostics-color=always&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-std=c++20&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-g&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;file&#125;&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-o&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-finput-charset=UTF-8&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-fexec-charset=GBK&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;options&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;cwd&quot;</span>: <span class="string">&quot;$&#123;fileDirname&#125;&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;problemMatcher&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$gcc&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;group&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;kind&quot;</span>: <span class="string">&quot;build&quot;</span>,</span><br><span class="line">                <span class="string">&quot;isDefault&quot;</span>: <span class="literal">true</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;detail&quot;</span>: <span class="string">&quot;Task generated by Debugger.&quot;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">&quot;type&quot;</span>: <span class="string">&quot;cppbuild&quot;</span>,</span><br><span class="line">            <span class="string">&quot;label&quot;</span>: <span class="string">&quot;C/C++: g++.exe 生成活动文件&quot;</span>,</span><br><span class="line">            <span class="string">&quot;command&quot;</span>: <span class="string">&quot;D:/Msys2-64bit/mingw64/bin/g++.exe&quot;</span>,</span><br><span class="line">            <span class="string">&quot;args&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;-fdiagnostics-color=always&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-g&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;file&#125;&quot;</span>,</span><br><span class="line">                <span class="string">&quot;-o&quot;</span>,</span><br><span class="line">                <span class="string">&quot;$&#123;fileDirname&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;options&quot;</span>: &#123;</span><br><span class="line">                <span class="string">&quot;cwd&quot;</span>: <span class="string">&quot;D:/Msys2-64bit/mingw64/bin&quot;</span></span><br><span class="line">            &#125;,</span><br><span class="line">            <span class="string">&quot;problemMatcher&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;$gcc&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="string">&quot;group&quot;</span>: <span class="string">&quot;build&quot;</span>,</span><br><span class="line">            <span class="string">&quot;detail&quot;</span>: <span class="string">&quot;调试器生成的任务。&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">&quot;version&quot;</span>: <span class="string">&quot;2.0.0&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在settings.json中中文路径就已经解决了，但中文名还在解决</strong><br>4.然后下载Code Runner，也是上面的方法，我就不讲了。<br>这样c++就配好了。</p>
+<h1 id="如何解决vscode中文名的问题"><a href="#如何解决vscode中文名的问题" class="headerlink" title="如何解决vscode中文名的问题"></a>如何解决vscode中文名的问题</h1><p>首先我们进入设备<br><img src="https://img-blog.csdnimg.cn/01e52d6f380248f8892dbdecff19c405.png#pic_center"><br>搜索“区域”，选择“区域设备”<br><img src="https://img-blog.csdnimg.cn/c84f1665f26c48408c4fee310fb58172.png#pic_center"><br>点击右侧“其他日期、时间和区域设置”<br><img src="https://img-blog.csdnimg.cn/20bd162eea1b47fc9db6abedd26e706e.png#pic_center"><br>点击“区域”<br><img src="https://img-blog.csdnimg.cn/a9a83e96fc604b8d87141588903cf59f.png#pic_center"><br>点击“更改系统区域设备(C)…”<br><img src="https://img-blog.csdnimg.cn/03584d41ca4246d093865295689f64bc.png#pic_center"><br>勾选“Beta 版: 使用 Unicode UTF-8 提供全球语言支持(U)”，电脑会叫你重启，你重启就行了<br><img src="https://img-blog.csdnimg.cn/cbe157bb51c74349a49e12e9f843c81d.png#pic_center"><br>这样vscode就不会要求文件路径不能有中文字符了，但Dev_C++会的字符会坏掉，一些游戏和压缩包的文字会出错。</p>
+
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>如果我写得好，就给我投点币吧</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="holiday1314 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>holiday1314
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://holiday1314.github.io/vscode/vscode%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B/" title="vscode配置教程">https://holiday1314.github.io/vscode/vscode配置教程/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E8%BE%91%E5%99%A8%E9%85%8D%E7%BD%AE/" rel="tag"><i class="fa fa-tag"></i> 编辑器配置</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/luogu/P1001/" rel="prev" title="luogu P1001 A+B problem">
+      <i class="fa fa-chevron-left"></i> luogu P1001 A+B problem
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/uncategorized/P4330/" rel="next" title="P4330">
+      P4330 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85vscode"><span class="nav-number">1.</span> <span class="nav-text">一、安装vscode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%85%8D%E7%BD%AEvscode"><span class="nav-number">2.</span> <span class="nav-text">二、配置vscode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3vscode%E4%B8%AD%E6%96%87%E5%90%8D%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">如何解决vscode中文名的问题</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="holiday1314"
+      src="/css/images/avatar.png">
+  <p class="site-author-name" itemprop="name">holiday1314</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/holiday1314" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;holiday1314" rel="noopener" target="_blank"><i class="github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:3286917231@qq.com" title="E-Mail → mailto:3286917231@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">holiday1314</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+
+<script>
+var options = {
+  bottom: '64px',
+  right: 'unset',
+  left: '32px',
+  time: '0.5s',
+  mixColor: 'transparent',
+  backgroundColor: 'transparent',
+  buttonColorDark: '#100f2c',
+  buttonColorLight: '#fff',
+  saveInCookies: true,
+  label: '🌓',
+  autoMatchOsTheme: true
+}
+const darkmode = new Darkmode(options);
+window.darkmode = darkmode;
+darkmode.showWidget();
+</script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'GTN79Hhinl03ncIpqLS0yYSQ-gzGzoHsz',
+      appKey     : 'OKXCrohJmkfj3Qd682zEj2gn',
+      placeholder: "在这里写下你的评论吧！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-CN' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div id="moon-menu-item-back2bottom" class="moon-menu-item" onclick="back2bottom()">
+      <i class='fa fa-chevron-down'></i>    </div>
+    
+    <div id="moon-menu-item-back2top" class="moon-menu-item" onclick="back2top()">
+      <i class='fa fa-chevron-up'></i>    </div>
+    
+  </div>
+  <div class="moon-menu-button">
+    <svg class="moon-menu-bg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+    </svg>
+    <div class="moon-menu-content">
+      <div class="moon-menu-icon"><i class='fas fa-ellipsis-v'></i></div>
+      <div class="moon-menu-text"></div>
+    </div>
+  </div>
+</div><script src="/js/injector.js"></script>
+</body>
+</html>
