@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://holiday1314.github.io/uncategorized/P4330/</loc>
+    <loc>https://holiday1314.github.io/luogu/P4330/</loc>
     
     <lastmod>2024-07-02</lastmod>
     
@@ -84,6 +84,13 @@
   
   <url>
     <loc>https://holiday1314.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2024-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://holiday1314.github.io/tags/%E5%93%88%E5%B8%8C/</loc>
     <lastmod>2024-07-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

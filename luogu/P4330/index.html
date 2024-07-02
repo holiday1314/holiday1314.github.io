@@ -22,17 +22,18 @@
 
   <meta name="description" content="无耻的推荐一下我的 CSDN。  暴力——人类的智慧！ 我们可以枚举边长，然后枚举左上角，再判断是否为对称子矩形。  步骤时间枚举边长$O(n)$枚举左上角$O(n ^ {2})$判断是否为对称子矩形$O(n ^ {2})$总时间复杂度$O(n ^ {5})$恭喜你，40 分！  优化的开始——二分！ 我们可以想想，枚举边长的时候可不可以二分呢？那么，时间复杂度就完美的把一个 $O(n)$ 降成">
 <meta property="og:type" content="article">
-<meta property="og:title" content="P4330">
-<meta property="og:url" content="https://holiday1314.github.io/uncategorized/P4330/">
+<meta property="og:title" content="luogu P4330 Debug">
+<meta property="og:url" content="https://holiday1314.github.io/luogu/P4330/">
 <meta property="og:site_name" content="holiday1314&#39;s blog">
 <meta property="og:description" content="无耻的推荐一下我的 CSDN。  暴力——人类的智慧！ 我们可以枚举边长，然后枚举左上角，再判断是否为对称子矩形。  步骤时间枚举边长$O(n)$枚举左上角$O(n ^ {2})$判断是否为对称子矩形$O(n ^ {2})$总时间复杂度$O(n ^ {5})$恭喜你，40 分！  优化的开始——二分！ 我们可以想想，枚举边长的时候可不可以二分呢？那么，时间复杂度就完美的把一个 $O(n)$ 降成">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-07-02T17:25:47.000Z">
-<meta property="article:modified_time" content="2024-07-02T09:26:10.709Z">
+<meta property="article:modified_time" content="2024-07-02T09:28:38.633Z">
 <meta property="article:author" content="holiday1314">
+<meta property="article:tag" content="哈希">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://holiday1314.github.io/uncategorized/P4330/">
+<link rel="canonical" href="https://holiday1314.github.io/luogu/P4330/">
 
 
 <script id="page-configurations">
@@ -45,7 +46,7 @@
   };
 </script>
 <link rel="stylesheet" type="text/css" href="/css/injector/main.css" /><link rel="preload" as="style" href="/css/injector/light.css" /><link rel="preload" as="style" href="/css/injector/dark.css" />
-  <title>P4330 | holiday1314's blog</title>
+  <title>luogu P4330 Debug | holiday1314's blog</title>
   
 
 
@@ -125,7 +126,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">1</span></a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">2</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -198,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://holiday1314.github.io/uncategorized/P4330/">
+    <link itemprop="mainEntityOfPage" href="https://holiday1314.github.io/luogu/P4330/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/css/images/avatar.png">
@@ -211,13 +212,22 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          P4330
+          luogu P4330 Debug
         </h1>
 
         <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/luogu/" itemprop="url" rel="index"><span itemprop="name">luogu</span></a>
+                </span>
+            </span>
 
           
-            <span id="/uncategorized/P4330/" class="post-meta-item leancloud_visitors" data-flag-title="P4330" title="阅读次数">
+            <span id="/luogu/P4330/" class="post-meta-item leancloud_visitors" data-flag-title="luogu P4330 Debug" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -232,8 +242,8 @@
       </span>
       <span class="post-meta-item-text">评论数：</span>
     
-    <a title="valine" href="/uncategorized/P4330/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/uncategorized/P4330/" itemprop="commentCount"></span>
+    <a title="valine" href="/luogu/P4330/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/luogu/P4330/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -394,7 +404,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://holiday1314.github.io/uncategorized/P4330/" title="P4330">https://holiday1314.github.io/uncategorized/P4330/</a>
+    <a href="https://holiday1314.github.io/luogu/P4330/" title="luogu P4330 Debug">https://holiday1314.github.io/luogu/P4330/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -404,6 +414,10 @@
 
 
       <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%93%88%E5%B8%8C/" rel="tag"><i class="fa fa-tag"></i> 哈希</a>
+          </div>
 
         
 
@@ -503,7 +517,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
