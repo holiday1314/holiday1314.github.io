@@ -17,6 +17,51 @@ href="https://holiday1314.github.io/about/">About</a></p></li>
       </categories>
   </entry>
   <entry>
+    <title>P8591</title>
+    <url>/luogu/P8591/</url>
+    <content><![CDATA[<h1 id="p8591-jroi-8颅脑损伤-2.0">P8591 『JROI-8』颅脑损伤 2.0</h1>
+<p><a href="https://www.luogu.com.cn/problem/P8591">题目传送门</a></p>
+<p><del>为什么有人看到这道题第一想法是搜索啊。</del></p>
+<h2 id="解题思路">解题思路</h2>
+<p>首先，我们可以考虑
+DP。<del>其实可以用记忆化搜索写，但是我懒。</del></p>
+<ul>
+<li><p>先以 <span class="math inline">\(l\)</span> 排序一遍，时间复杂度
+<span class="math inline">\(O(n \ log \ n)\)</span> 。</p></li>
+<li><p>设 <span class="math inline">\(dp_i\)</span> 为第 <span
+class="math inline">\(i\)</span> 个线段被标红时前 <span
+class="math inline">\(i\)</span> 条线段的最小代价。</p></li>
+<li><p>所以，有公式</p></li>
+</ul>
+<p><span class="math display">\[
+dp_i = \min_{r_k \ge l_i} \min_{r_j \ge l_k} dp_j + r_i - l_i
+\]</span></p>
+<ul>
+<li>我们发现 <span class="math inline">\(k\)</span> 在计算 <span
+class="math inline">\(dp_i\)</span> 的时候只起到确定 <span
+class="math inline">\(j\)</span> 的作用，我们可以尝试把他舍掉，以 <span
+class="math inline">\(i\)</span> 确定 <span
+class="math inline">\(j\)</span>。我们发现，我们只要保证在 <span
+class="math inline">\(i\)</span> 到 <span
+class="math inline">\(k\)</span> 之间的黑色线段与 <span
+class="math inline">\(i\)</span> 或 <span
+class="math inline">\(k\)</span> 相交就可以了，所以</li>
+</ul>
+<p><span class="math display">\[
+\max_{k \in (i,j), r_k &lt; l_i, l_k \le r_i} l_k \le r_j \le l_i
+\]</span></p>
+<p>那么，我们的正解就出来了，亮代码！</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,s1,s2,s3) for(i = s1;i &lt;= s2;i += s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> r(i,s1,s2,s3) for(i = s1;i &gt;= s2;i -= s3)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> INF 0x77f7f7f7f7f7f7fll</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ull unsiged ll</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line">ll n,ans = INF,dp[<span class="number">100010</span>];</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">node</span>&#123;</span><br><span class="line">    ll l,r;</span><br><span class="line">    <span class="function">ll <span class="title">len</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> r - l;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;a[<span class="number">100010</span>];</span><br><span class="line"><span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(node s1,node s2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> s1.l == s2.l ? s1.r &lt; s2.r : s1.l &lt; s2.l;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>); cin.<span class="built_in">tie</span>(<span class="number">0</span>); cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> ONLNE_JUDGE</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;.in&quot;</span>,<span class="string">&quot;r&quot;</span>,stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;.out&quot;</span>,<span class="string">&quot;w&quot;</span>,stdout);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    ll i,j,id;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) cin&gt;&gt;a[i].l&gt;&gt;a[i].r;</span><br><span class="line">    <span class="built_in">sort</span>(a + <span class="number">1</span>,a + n + <span class="number">1</span>,cmp);</span><br><span class="line">    <span class="built_in">memset</span>(dp,<span class="number">0x3f</span>,<span class="built_in">sizeof</span>(dp));</span><br><span class="line">    a[<span class="number">0</span>].r = -INF;</span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>)&#123;</span><br><span class="line">        id = -INF;</span><br><span class="line">        <span class="built_in">r</span>(j,i,<span class="number">0</span>,<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j].r &gt;= a[i].l || a[j].r &lt; id) <span class="keyword">continue</span>;</span><br><span class="line">            dp[i] = <span class="built_in">min</span>(dp[i],dp[j] + a[i].<span class="built_in">len</span>());</span><br><span class="line">            id = <span class="built_in">max</span>(id,a[j].r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,n,<span class="number">1</span>) <span class="keyword">if</span>(a[i].r &gt;= a[n].l) ans = <span class="built_in">min</span>(ans,dp[i]);</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个代码好像被宇宙射线修改了，请谨慎提交。</p>
+]]></content>
+      <categories>
+        <category>luogu</category>
+      </categories>
+      <tags>
+        <tag>动态规划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>luogu P10678 『STA - R6』月</title>
     <url>/luogu/P10678/</url>
     <content><![CDATA[<h1 id="p10678-sta---r6月">P10678 『STA - R6』月</h1>

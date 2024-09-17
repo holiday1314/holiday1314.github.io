@@ -121,7 +121,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">4</span></a>
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -131,7 +131,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">5</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">6</span></a>
 
   </li>
         <li class="menu-item menu-item-commonweal">
@@ -251,6 +251,113 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/Hello/Welcome%20to%20holiday1314's%20blog!/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://holiday1314.github.io/luogu/P8591/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/css/images/avatar.png">
+      <meta itemprop="name" content="holiday1314">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="holiday1314's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/luogu/P8591/" class="post-title-link" itemprop="url">P8591</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/luogu/" itemprop="url" rel="index"><span itemprop="name">luogu</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/luogu/P8591/" class="post-meta-item leancloud_visitors" data-flag-title="P8591" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论数：</span>
+    
+    <a title="valine" href="/luogu/P8591/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/luogu/P8591/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          P8591 『JROI-8』颅脑损伤 2.0
+题目传送门
+
+为什么有人看到这道题第一想法是搜索啊。
+
+解题思路
+首先，我们可以考虑 DP。其实可以用记忆化搜索写，但是我懒。
+
+ * 先以 \(l\) 排序一遍，时间复杂度\(O(n \ log \ n)\) 。
+   
+   
+ * 设 \(dp_i\) 为第 \(i\) 个线段被标红时前 \(i\) 条线段的最小代价。
+   
+   
+ * 所以，有公式
+   
+   
+
+\[ dp_i = \min_{r_k \ge l_i} \min_{r_j \ge l_k} dp_j + r_i - l_i \]
+
+ * 我们发现 \(k\) 在计算
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/luogu/P8591/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -800,7 +907,7 @@ output(a + b)
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -813,7 +920,7 @@ output(a + b)
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
